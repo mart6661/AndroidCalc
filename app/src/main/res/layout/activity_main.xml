@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_back"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:scrollbars="vertical"
+            android:textSize="30dp"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="5dp"
+            app:layout_heightPercent="25%"/>
+
+
+            <Button
+            android:id="@+id/buttonSum"
+            android:text="="
+            android:background="@drawable/del"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="50%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+                android:onClick="onClicked" />
+
+        <Button
+            android:id="@+id/button0"
+            android:text="0"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="onClicked" />
+
+        <Button
+            android:id="@+id/buttonDot"
+            android:text="."
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/button0"
+            android:layout_alignParentBottom="true"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button1"
+            android:text="1"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+           android:layout_above="@id/button0"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button2"
+            android:text="2"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/button1"
+            android:layout_above="@id/buttonDot"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button3"
+            android:text="3"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/button2"
+            android:layout_above="@id/buttonSum"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/buttonMinus"
+            android:text="-"
+            android:background="@drawable/tehted"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/button3"
+            android:layout_above="@id/buttonSum"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button4"
+            android:text="4"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button1"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button5"
+            android:text="5"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button2"
+            android:layout_toRightOf="@id/button4"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button6"
+            android:text="6"
+
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button3"
+            android:layout_toRightOf="@id/button5"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/buttonPlus"
+            android:text="+"
+            android:background="@drawable/tehted"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/buttonMinus"
+            android:layout_toRightOf="@id/button6"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button7"
+            android:text="7"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button4"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button8"
+            android:text="8"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button5"
+            android:layout_toRightOf="@id/button7"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/button9"
+            android:text="9"
+            android:background="@drawable/number_style"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button6"
+            android:layout_toRightOf="@id/button8"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/buttonX"
+            android:text="*"
+            android:background="@drawable/tehted"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/buttonPlus"
+            android:layout_toRightOf="@id/button9"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/buttonDel"
+            android:text="Del"
+            android:background="@drawable/del"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/buttonX"
+            android:layout_toRightOf="@id/button9"
+            android:layout_alignParentRight="true"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/buttonJaga"
+            android:text="/"
+            android:background="@drawable/tehted"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="25%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button9"
+            android:layout_toLeftOf="@id/buttonDel"
+            android:onClick="onClicked" />
+        <Button
+            android:id="@+id/buttonC"
+            android:text="C"
+            android:background="@drawable/tehted"
+            app:layout_heightPercent="15%"
+            app:layout_widthPercent="50%"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/button9"
+            android:layout_toLeftOf="@id/buttonJaga"
+
+            android:onClick="onClicked" />
+
+
+
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>
