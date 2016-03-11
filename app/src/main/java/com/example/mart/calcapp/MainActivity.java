@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean dot = false;
     public String string1 = "";
 
+    Engine engine = new Engine();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (BuildConfig.DEBUG) {
@@ -56,35 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (string1.contains("=")){
             number2 = Double.parseDouble(output.getText().toString());
-            if (sign.contains("+"))
-            {
-                output.setText(Double.toString(number1 + number2));
-            }
-            else if (sign.contains("-"))
-            {
-                output.setText(Double.toString(number1 - number2));
-
-            }
-            else if (sign.contains("*"))
-            {
-                output.setText(Double.toString(number1 * number2));
-
-            }
-            else if (sign.contains("/"))
-            {
-                if (number2 == 0)
-                {
-                    // Cannot Divide By Zero
-                    output.setText("Cannot Divide By Zero!");
-                }
-                else
-                {
-                    output.setText(Double.toString(number1 / number2));
-
-                }
-
-            }
-            sign = "";
+            output.setText(engine.calcAns(number1, number2, sign));
+           sign = "";
         }
 
 
