@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     public String sign = "";
     public Double number1, number2;
-    public boolean dot = false;
+    public boolean dot = false; // dot logic
     public String string1 = "";
 
 
