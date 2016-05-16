@@ -1,5 +1,8 @@
 package com.example.mart.calcapp;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ArrowKeyMovementMethod;
@@ -8,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.BroadcastReceiver;
 
 import java.util.ArrayList;
 
@@ -18,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean dot = false;
     public String string1 = "";
 
-    Engine engine = new Engine();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
         if (isNumber(string1)){
             output.append(string1);
+           output.setText(output.getText());
+
+
 
         } else if  (isOperator(string1)){
-          if(sign == "") {
-              number1 = Double.parseDouble(output.getText().toString());
-              output.setText("");
-              sign = string1;
-              dot = false;}
+          if(sign == "" && output.getText().toString() != "") {
+
+                  number1 = Double.parseDouble(output.getText().toString());
+                  output.setText("");
+                  sign = string1;
+                  dot = false; }
         } else if (string1.contains(".")){
             if (dot == false){
                 output.append(dotLogic(string1, output.getText().toString()));
@@ -56,14 +64,40 @@ public class MainActivity extends AppCompatActivity {
                 output.setText(output.getText().toString().substring(0, output.getText().length() - 1));}
 
 
-        } else if (string1.contains("=")){
+        } else if (string1.contains("=") && number1 != null && sign != null ){
             number2 = Double.parseDouble(output.getText().toString());
-            output.setText(engine.calcAns(number1, number2, sign));
-           sign = "";
-        }
+            calcBroad();
 
+
+           // output.setText(engine.calcAns(number1, number2, sign));
+           //   number1=null;
+           // number2=null;
+
+        }
+    }
+
+    public void calcBroad (){
+
+        final TextView output = (TextView) findViewById(R.id.textView);
+        Intent intent = new Intent();
+        intent.setAction("com.example.mart.calcapp");
+        intent.addFlags(intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+        intent.putExtra("number1", number1);
+        intent.putExtra("number2", number2);
+        intent.putExtra("sign", sign);
+        sendOrderedBroadcast(intent, null, new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String s;
+                s = getResultData();
+                output.setText(s.toString());
+            }
+        }, null, Activity.RESULT_OK, null, null);
+        number1 = null;
+        number1 = null;
 
     }
+
 public String dotLogic (String a, String c){
     String b = "";
     if(c.length()== 0){
